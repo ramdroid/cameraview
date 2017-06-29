@@ -308,6 +308,7 @@ class Camera1 extends CameraViewImpl {
         adjustCameraParameters();
         mCamera.setDisplayOrientation(calcCameraRotation(mDisplayOrientation));
         mCallback.onCameraOpened();
+        mCallback.onCameraConfigured();
     }
 
     private AspectRatio chooseAspectRatio() {
