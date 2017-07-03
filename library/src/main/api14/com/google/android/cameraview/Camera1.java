@@ -282,7 +282,10 @@ class Camera1 extends CameraViewImpl {
                 return;
             }
         }
-        mCameraId = INVALID_CAMERA_ID;
+
+        // INVALID_CAMERA_ID is never checked and therefore leads to exception, so just take first camera if requested camera can't be found
+        mCameraId = 0;// INVALID_CAMERA_ID;
+        mFacing = mCameraInfo.facing;
     }
 
     private void openCamera() {
