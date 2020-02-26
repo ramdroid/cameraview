@@ -669,6 +669,8 @@ class Camera2 extends CameraViewImpl {
             mCaptureCallback.setState(PictureCaptureCallback.STATE_PREVIEW);
         } catch (CameraAccessException e) {
             Log.e(TAG, "Failed to restart camera preview.", e);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
     }
 
